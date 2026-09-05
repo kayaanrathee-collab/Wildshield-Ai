@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,6 +10,10 @@
 content="WildShield AI uses intelligent animal detection to help protect wildlife and improve road safety.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -26,19 +29,29 @@ body{
     overflow-x:hidden;
 }
 
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:75px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 7%;
+
     z-index:1000;
+
     background:rgba(3,7,6,.55);
     backdrop-filter:blur(15px);
+
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
@@ -63,31 +76,43 @@ nav a{
 
 nav a:hover{
     color:#63ff9c;
-    text-shadow:0 0 15px rgba(99,255,156,.7);
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     height:100vh;
     min-height:700px;
+
     position:relative;
+
     display:flex;
     align-items:center;
+
     padding:0 8%;
+
     overflow:hidden;
 }
 
 .hero-video{
     position:absolute;
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     z-index:-3;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
+
     background:
     linear-gradient(
         90deg,
@@ -95,18 +120,25 @@ nav a:hover{
         rgba(2,7,5,.72) 45%,
         rgba(2,7,5,.35) 100%
     );
+
     z-index:-2;
 }
 
 .hero-glow{
     position:absolute;
+
     width:500px;
     height:500px;
+
     right:5%;
     top:25%;
+
     border-radius:50%;
+
     background:rgba(45,255,140,.08);
+
     filter:blur(80px);
+
     z-index:-1;
 }
 
@@ -116,21 +148,28 @@ nav a:hover{
 
 .tag{
     display:inline-block;
+
     padding:9px 16px;
+
     border:1px solid rgba(99,255,156,.35);
     border-radius:50px;
+
     color:#63ff9c;
+
     background:rgba(99,255,156,.06);
+
     font-size:12px;
     letter-spacing:2px;
+
     margin-bottom:25px;
-    box-shadow:0 0 25px rgba(99,255,156,.08);
 }
 
 h1{
     font-size:clamp(55px,8vw,105px);
     line-height:.92;
+
     letter-spacing:-5px;
+
     margin-bottom:28px;
 }
 
@@ -142,49 +181,63 @@ h1{
 
 .hero p{
     max-width:650px;
+
     font-size:19px;
     line-height:1.7;
+
     color:#c6d0cb;
 }
 
 .buttons{
     display:flex;
     gap:15px;
+
     margin-top:35px;
+
     flex-wrap:wrap;
 }
 
 .btn{
     padding:15px 25px;
+
     border-radius:8px;
+
     text-decoration:none;
+
     font-weight:bold;
     font-size:14px;
+
     transition:.3s;
 }
 
 .btn-primary{
     background:#63ff9c;
     color:#031108;
-    box-shadow:0 0 20px rgba(99,255,156,.12);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 35px rgba(99,255,156,.3);
+
+    box-shadow:
+    0 10px 35px rgba(99,255,156,.25);
 }
 
 .btn-outline{
     color:white;
+
     border:1px solid rgba(255,255,255,.2);
+
     background:rgba(255,255,255,.04);
-    backdrop-filter:blur(10px);
 }
 
 .btn-outline:hover{
     background:rgba(255,255,255,.1);
-    border-color:rgba(99,255,156,.4);
 }
+
+
+/* =========================
+   SECTIONS
+========================= */
 
 section{
     padding:110px 8%;
@@ -192,49 +245,70 @@ section{
 
 .section-label{
     color:#63ff9c;
+
     font-size:12px;
     letter-spacing:3px;
+
     font-weight:bold;
+
     margin-bottom:15px;
 }
 
 .section-title{
     font-size:clamp(35px,5vw,65px);
+
     margin-bottom:20px;
 }
 
 .section-text{
     color:#aebbb4;
+
     max-width:700px;
+
     line-height:1.8;
 }
 
+
+/* =========================
+   TECHNOLOGY CARDS
+========================= */
+
 .cards{
     margin-top:50px;
+
     display:grid;
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
 }
 
 .card{
     padding:35px;
+
     min-height:230px;
+
     border:1px solid rgba(255,255,255,.09);
     border-radius:18px;
+
     background:
     linear-gradient(
         145deg,
         rgba(255,255,255,.07),
         rgba(255,255,255,.025)
     );
+
     backdrop-filter:blur(10px);
+
     transition:.35s;
 }
 
 .card:hover{
     transform:translateY(-8px);
+
     border-color:rgba(99,255,156,.35);
-    box-shadow:0 15px 50px rgba(99,255,156,.08);
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.25);
 }
 
 .icon{
@@ -252,29 +326,35 @@ section{
     line-height:1.7;
 }
 
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
 .process{
     display:grid;
     grid-template-columns:repeat(4,1fr);
+
     gap:15px;
+
     margin-top:50px;
 }
 
 .step{
     position:relative;
-    padding:30px;
-    border-left:1px solid rgba(99,255,156,.3);
-    transition:.3s;
-}
 
-.step:hover{
-    border-left-color:#63ff9c;
-    transform:translateX(5px);
+    padding:30px;
+
+    border-left:1px solid rgba(99,255,156,.3);
 }
 
 .number{
     font-size:45px;
+
     font-weight:bold;
+
     color:#63ff9c;
+
     opacity:.6;
 }
 
@@ -286,6 +366,11 @@ section{
     color:#9eaaa4;
     line-height:1.6;
 }
+
+
+/* =========================
+   DEMO
+========================= */
 
 .demo{
     background:
@@ -299,253 +384,344 @@ section{
 
 .demo-box{
     margin-top:45px;
+
     padding:50px;
+
     border-radius:25px;
+
     border:1px solid rgba(255,255,255,.1);
+
     background:rgba(255,255,255,.035);
+
     text-align:center;
-    backdrop-filter:blur(15px);
-    box-shadow:0 20px 70px rgba(0,0,0,.3);
 }
 
 .scanner{
     width:180px;
     height:180px;
+
     border:1px solid rgba(99,255,156,.4);
+
     border-radius:50%;
+
     margin:0 auto 30px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     position:relative;
-    box-shadow:0 0 40px rgba(99,255,156,.08);
+
+    box-shadow:
+    0 0 50px rgba(99,255,156,.08);
 }
 
 .scanner::before{
     content:"";
+
     position:absolute;
+
     width:75%;
     height:75%;
+
     border:1px solid rgba(99,255,156,.3);
+
     border-radius:50%;
 }
 
 .scanner::after{
     content:"";
+
     position:absolute;
+
     width:50%;
     height:1px;
+
     background:#63ff9c;
+
     animation:scan 2s linear infinite;
+
     transform-origin:left center;
 }
 
 @keyframes scan{
+
     from{
-        transform:rotate(0deg)
+        transform:rotate(0deg);
     }
+
     to{
-        transform:rotate(360deg)
+        transform:rotate(360deg);
     }
+
 }
 
 .animal{
     font-size:65px;
 }
 
+
+/* =========================
+   STATS
+========================= */
+
 .stats{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
+
     margin-top:40px;
 }
 
 .stat{
     text-align:center;
-    padding:30px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:15px;
-    background:rgba(255,255,255,.025);
-    backdrop-filter:blur(10px);
-    transition:.3s;
-}
 
-.stat:hover{
-    border-color:rgba(99,255,156,.3);
-    transform:translateY(-5px);
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.02);
 }
 
 .stat strong{
     display:block;
+
     font-size:38px;
+
     color:#63ff9c;
+
     margin-bottom:8px;
 }
 
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
 #contact{
+    position:relative;
+
     background:
     radial-gradient(
-        circle at 20% 50%,
-        rgba(99,255,156,.06),
-        transparent 35%
+        circle at 50% 0%,
+        rgba(99,255,156,.07),
+        transparent 45%
     );
 }
 
+
+/* Main glass box */
+
 .contact-box{
-    position:relative;
+
     margin-top:45px;
+
     max-width:750px;
+
     padding:40px;
+
     border-radius:24px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.09),
-        rgba(255,255,255,.025)
-    );
-
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
 
     border:1px solid rgba(99,255,156,.25);
 
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.025)
+    );
+
+    backdrop-filter:blur(20px);
+
     box-shadow:
+    0 0 0 1px rgba(99,255,156,.04),
     0 20px 80px rgba(0,0,0,.35),
-    0 0 35px rgba(99,255,156,.08);
+    0 0 45px rgba(99,255,156,.07);
+
+    position:relative;
 
     overflow:hidden;
 }
 
+
+/* Glow inside contact box */
+
 .contact-box::before{
+
     content:"";
+
     position:absolute;
-    inset:-2px;
-    border-radius:25px;
-    padding:2px;
 
-    background:
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(99,255,156,.8),
-        transparent,
-        rgba(99,255,156,.5),
-        transparent
-    );
+    width:250px;
+    height:250px;
 
-    background-size:300% 300%;
+    right:-100px;
+    top:-120px;
 
-    animation:borderGlow 6s linear infinite;
+    border-radius:50%;
 
-    -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+    background:rgba(99,255,156,.10);
 
-    -webkit-mask-composite:xor;
-
-    mask-composite:exclude;
+    filter:blur(70px);
 
     pointer-events:none;
 }
 
-@keyframes borderGlow{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
-}
 
 .contact-box form{
-    position:relative;
-    z-index:2;
+
     display:flex;
+
     flex-direction:column;
-    gap:18px;
+
+    gap:16px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.contact-box input,
+
+/* Fixed Name / Email */
+
+.fixed-detail{
+
+    width:100%;
+
+    padding:17px 18px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(99,255,156,.20);
+
+    background:rgba(0,0,0,.28);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:default;
+
+    box-shadow:
+    inset 0 0 20px rgba(99,255,156,.025);
+}
+
+.fixed-detail span{
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#89958f;
+}
+
+.fixed-detail strong{
+
+    font-size:15px;
+
+    color:#63ff9c;
+
+    font-weight:500;
+
+    user-select:none;
+}
+
+
+/* Message */
+
 .contact-box textarea{
 
     width:100%;
-    padding:17px 18px;
+
+    min-height:160px;
+
+    padding:17px;
 
     border-radius:12px;
 
     border:1px solid rgba(255,255,255,.12);
 
-    background:rgba(0,0,0,.25);
+    background:rgba(0,0,0,.3);
 
     color:white;
 
     font-family:inherit;
+
     font-size:15px;
 
     outline:none;
 
+    resize:vertical;
+
     transition:.3s;
-
-    backdrop-filter:blur(8px);
 }
 
-.contact-box input::placeholder,
 .contact-box textarea::placeholder{
-    color:#89958f;
+    color:#738078;
 }
 
-.contact-box input:focus,
 .contact-box textarea:focus{
 
     border-color:#63ff9c;
 
-    background:rgba(0,0,0,.35);
-
     box-shadow:
-    0 0 20px rgba(99,255,156,.12),
-    inset 0 0 15px rgba(99,255,156,.03);
+    0 0 25px rgba(99,255,156,.08);
 }
 
-/* NON-EDITABLE DETAILS */
 
-.contact-box input[readonly]{
-    cursor:not-allowed;
-    opacity:.85;
-    color:#63ff9c;
-}
-
-.contact-box textarea{
-    resize:vertical;
-    min-height:140px;
-}
+/* Send button */
 
 .contact-box button{
+
     border:none;
+
     cursor:pointer;
+
     width:max-content;
+
+    padding:16px 28px;
+
     margin-top:5px;
-    box-shadow:0 0 25px rgba(99,255,156,.15);
+
+    font-size:14px;
+
+    letter-spacing:.5px;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
+
     padding:50px 8%;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     display:flex;
+
     justify-content:space-between;
+
     color:#819088;
 }
 
 footer strong{
     color:white;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
@@ -587,398 +763,615 @@ footer strong{
 }
 
 </style>
-
 </head>
+
 
 <body>
 
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
 
-<div class="logo">
-WILDSHIELD <span>AI</span>
-</div>
+    <div class="logo">
+        WILDSHIELD <span>AI</span>
+    </div>
 
-<div class="links">
+    <div class="links">
 
-<a href="#technology">Technology</a>
-<a href="#how">How It Works</a>
-<a href="#demo">Demo</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+        <a href="#technology">
+            Technology
+        </a>
 
-</div>
+        <a href="#how">
+            How It Works
+        </a>
+
+        <a href="#demo">
+            Demo
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
 
 </nav>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<video
-class="hero-video"
-autoplay
-muted
-loop
-playsinline>
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
 
-<source src="wildlife.mp4" type="video/mp4">
+        <source
+            src="wildlife.mp4"
+            type="video/mp4">
 
-</video>
+    </video>
 
-<div class="hero-overlay"></div>
-<div class="hero-glow"></div>
 
-<div class="hero-content">
+    <div class="hero-overlay"></div>
 
-<div class="tag">
-AI • WILDLIFE • ROAD SAFETY
-</div>
+    <div class="hero-glow"></div>
 
-<h1>
-Protecting<br>
-<span class="gradient">Wildlife.</span><br>
-Saving Roads.
-</h1>
 
-<p>
-WildShield AI is an intelligent wildlife detection system
-designed to identify animals near roads and provide early
-warnings to help reduce wildlife–vehicle collisions.
-</p>
+    <div class="hero-content">
 
-<div class="buttons">
+        <div class="tag">
+            AI • WILDLIFE • ROAD SAFETY
+        </div>
 
-<a href="#technology" class="btn btn-primary">
-EXPLORE TECHNOLOGY →
-</a>
 
-<a href="#demo" class="btn btn-outline">
-VIEW DEMO
-</a>
+        <h1>
 
-</div>
+            Protecting<br>
 
-</div>
+            <span class="gradient">
+                Wildlife.
+            </span><br>
+
+            Saving Roads.
+
+        </h1>
+
+
+        <p>
+
+            WildShield AI is an intelligent wildlife detection
+            system designed to identify animals near roads and
+            provide early warnings to help reduce
+            wildlife–vehicle collisions.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#technology"
+                class="btn btn-primary">
+
+                EXPLORE TECHNOLOGY →
+
+            </a>
+
+
+            <a
+                href="#demo"
+                class="btn btn-outline">
+
+                VIEW DEMO
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     TECHNOLOGY
+========================= -->
 
 <section id="technology">
 
-<div class="section-label">
-THE TECHNOLOGY
-</div>
-
-<h2 class="section-title">
-Intelligence that watches<br>
-where humans can't.
-</h2>
-
-<p class="section-text">
-WildShield AI combines camera-based computer vision,
-intelligent animal detection and road-side warning systems
-to create an early-alert layer between wildlife and vehicles.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">👁️</div>
-
-<h3>AI Vision</h3>
-
-<p>
-A camera observes the roadside environment and an AI model
-analyses the scene for animals.
-</p>
-
-</div>
+    <div class="section-label">
+        THE TECHNOLOGY
+    </div>
 
 
-<div class="card">
+    <h2 class="section-title">
 
-<div class="icon">🦌</div>
+        Intelligence that watches<br>
+        where humans can't.
 
-<h3>Animal Detection</h3>
-
-<p>
-The system identifies wildlife entering areas where
-vehicles may be approaching.
-</p>
-
-</div>
+    </h2>
 
 
-<div class="card">
+    <p class="section-text">
 
-<div class="icon">⚠️</div>
+        WildShield AI combines camera-based computer vision,
+        intelligent animal detection and road-side warning
+        systems to create an early-alert layer between wildlife
+        and vehicles.
 
-<h3>Early Warning</h3>
+    </p>
 
-<p>
-When an animal is detected, the system can trigger
-a warning mechanism for approaching drivers.
-</p>
 
-</div>
+    <div class="cards">
 
-</div>
+
+        <div class="card">
+
+            <div class="icon">
+                👁️
+            </div>
+
+            <h3>
+                AI Vision
+            </h3>
+
+            <p>
+
+                A camera observes the roadside environment
+                and an AI model analyses the scene for animals.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🦌
+            </div>
+
+            <h3>
+                Animal Detection
+            </h3>
+
+            <p>
+
+                The system identifies wildlife entering areas
+                where vehicles may be approaching.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                ⚠️
+            </div>
+
+            <h3>
+                Early Warning
+            </h3>
+
+            <p>
+
+                When an animal is detected, the system can
+                trigger a warning mechanism for approaching drivers.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
 
 <section id="how">
 
-<div class="section-label">
-HOW IT WORKS
-</div>
-
-<h2 class="section-title">
-From vision to warning.
-</h2>
-
-<div class="process">
-
-<div class="step">
-
-<div class="number">01</div>
-
-<h3>Camera</h3>
-
-<p>
-The camera continuously observes the roadside area.
-</p>
-
-</div>
+    <div class="section-label">
+        HOW IT WORKS
+    </div>
 
 
-<div class="step">
-
-<div class="number">02</div>
-
-<h3>AI Analysis</h3>
-
-<p>
-Computer vision analyses the camera feed for wildlife.
-</p>
-
-</div>
+    <h2 class="section-title">
+        From vision to warning.
+    </h2>
 
 
-<div class="step">
-
-<div class="number">03</div>
-
-<h3>Detection</h3>
-
-<p>
-When wildlife is identified, the system activates an alert.
-</p>
-
-</div>
+    <div class="process">
 
 
-<div class="step">
+        <div class="step">
 
-<div class="number">04</div>
+            <div class="number">
+                01
+            </div>
 
-<h3>Warning</h3>
+            <h3>
+                Camera
+            </h3>
 
-<p>
-Drivers receive an early visual warning to encourage
-greater awareness.
-</p>
+            <p>
+                The camera continuously observes
+                the roadside area.
+            </p>
 
-</div>
+        </div>
 
-</div>
+
+
+        <div class="step">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                AI Analysis
+            </h3>
+
+            <p>
+                Computer vision analyses the camera
+                feed for wildlife.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Detection
+            </h3>
+
+            <p>
+                When wildlife is identified,
+                the system activates an alert.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                04
+            </div>
+
+            <h3>
+                Warning
+            </h3>
+
+            <p>
+                Drivers receive an early visual warning
+                to encourage greater awareness.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DEMO
+========================= -->
+
+<section
+    id="demo"
+    class="demo">
+
+    <div class="section-label">
+        LIVE CONCEPT
+    </div>
+
+
+    <h2 class="section-title">
+        WildShield detection system.
+    </h2>
+
+
+    <p class="section-text">
+
+        This visual represents the AI detection concept
+        used by the WildShield system.
+
+    </p>
+
+
+    <div class="demo-box">
+
+
+        <div class="scanner">
+
+            <div class="animal">
+                🦌
+            </div>
+
+        </div>
+
+
+        <h2>
+            ANIMAL DETECTED
+        </h2>
+
+
+        <p
+            style="
+            margin-top:10px;
+            color:#9eaaa4;
+            ">
+
+            AI vision system • Detection active
+
+        </p>
+
+    </div>
 
 </section>
 
 
-<section id="demo" class="demo">
 
-<div class="section-label">
-LIVE CONCEPT
-</div>
-
-<h2 class="section-title">
-WildShield detection system.
-</h2>
-
-<p class="section-text">
-This visual represents the AI detection concept used by
-the WildShield system.
-</p>
-
-<div class="demo-box">
-
-<div class="scanner">
-
-<div class="animal">
-🦌
-</div>
-
-</div>
-
-<h2>
-ANIMAL DETECTED
-</h2>
-
-<p style="margin-top:10px;color:#9eaaa4;">
-AI vision system • Detection active
-</p>
-
-</div>
-
-</section>
-
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
-<div class="section-label">
-WHY WILDSHIELD
-</div>
-
-<h2 class="section-title">
-Technology with a purpose.
-</h2>
-
-<p class="section-text">
-WildShield AI aims to create safer roads while helping
-protect wildlife habitats. Instead of waiting for a collision,
-the system focuses on early detection and awareness.
-</p>
-
-<div class="stats">
-
-<div class="stat">
-
-<strong>AI</strong>
-
-Intelligent Detection
-
-</div>
+    <div class="section-label">
+        WHY WILDSHIELD
+    </div>
 
 
-<div class="stat">
-
-<strong>24/7</strong>
-
-Continuous Monitoring
-
-</div>
+    <h2 class="section-title">
+        Technology with a purpose.
+    </h2>
 
 
-<div class="stat">
+    <p class="section-text">
 
-<strong>2×</strong>
+        WildShield AI aims to create safer roads while helping
+        protect wildlife habitats. Instead of waiting for a
+        collision, the system focuses on early detection
+        and awareness.
 
-Protection Focus
+    </p>
 
-</div>
 
-</div>
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <strong>
+                AI
+            </strong>
+
+            Intelligent Detection
+
+        </div>
+
+
+
+        <div class="stat">
+
+            <strong>
+                24/7
+            </strong>
+
+            Continuous Monitoring
+
+        </div>
+
+
+
+        <div class="stat">
+
+            <strong>
+                2×
+            </strong>
+
+            Protection Focus
+
+        </div>
+
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
-<div class="section-label">
-GET IN TOUCH
-</div>
-
-<h2 class="section-title">
-Contact WildShield AI.
-</h2>
-
-<p class="section-text">
-Have a question, idea, or want to learn more about WildShield AI?
-Send us a message.
-</p>
-
-<div class="contact-box">
-
-<form
-action="https://formsubmit.co/kayaanrathee@gmail.com"
-method="POST"
->
-
-<input
-type="hidden"
-name="_subject"
-value="New WildShield AI Website Message"
->
-
-<input
-type="hidden"
-name="_captcha"
-value="false"
->
+    <div class="section-label">
+        GET IN TOUCH
+    </div>
 
 
-<input
-type="text"
-name="name"
-value="Kayaan Rathee"
-readonly
->
+    <h2 class="section-title">
+        Contact WildShield AI.
+    </h2>
 
 
-<input
-type="email"
-name="email"
-value="kayaanrathee@gmail.com"
-readonly
->
+    <p class="section-text">
+
+        Have a question, idea, or want to learn more about
+        WildShield AI? Send us a message.
+
+    </p>
 
 
-<textarea
-name="message"
-placeholder="Your Message"
-rows="6"
-required
-></textarea>
+    <div class="contact-box">
 
 
-<button
-type="submit"
-class="btn btn-primary"
->
+        <!--
+        FormSubmit sends the message to this email.
+        -->
 
-SEND MESSAGE →
+        <form
+            action="https://formsubmit.co/kayaanrathee@gmail.com"
+            method="POST">
 
-</button>
 
-</form>
+            <!-- Email subject -->
 
-</div>
+            <input
+                type="hidden"
+                name="_subject"
+                value="New WildShield AI Website Message">
+
+
+            <!-- Disable FormSubmit CAPTCHA -->
+
+            <input
+                type="hidden"
+                name="_captcha"
+                value="false">
+
+
+            <!--
+            FIXED NAME
+            Visitors cannot edit this.
+            -->
+
+            <div class="fixed-detail">
+
+                <span>
+                    Name
+                </span>
+
+                <strong>
+                    Kayaan Rathee
+                </strong>
+
+            </div>
+
+
+            <!--
+            FIXED EMAIL
+            Visitors cannot edit this.
+            -->
+
+            <div class="fixed-detail">
+
+                <span>
+                    Email
+                </span>
+
+                <strong>
+                    kayaanrathee@gmail.com
+                </strong>
+
+            </div>
+
+
+            <!--
+            Hidden values are submitted with the form.
+            -->
+
+            <input
+                type="hidden"
+                name="name"
+                value="Kayaan Rathee">
+
+
+            <input
+                type="hidden"
+                name="email"
+                value="kayaanrathee@gmail.com">
+
+
+            <!--
+            ONLY THIS FIELD IS EDITABLE
+            -->
+
+            <textarea
+                name="message"
+                placeholder="Write your message here..."
+                rows="6"
+                required></textarea>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                SEND MESSAGE →
+
+            </button>
+
+
+        </form>
+
+    </div>
 
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<div>
+    <div>
 
-<strong>
-WILDSHIELD AI
-</strong>
+        <strong>
+            WILDSHIELD AI
+        </strong>
 
-<br>
+        <br>
 
-Protect Wildlife. Protect Roads.
+        Protect Wildlife. Protect Roads.
 
-</div>
+    </div>
 
 
-<div>
-
-© 2026 WildShield AI
-
-</div>
+    <div>
+        © 2026 WildShield AI
+    </div>
 
 </footer>
 
